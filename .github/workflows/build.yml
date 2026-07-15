@@ -27,7 +27,7 @@ jobs:
         run: |
           keytool -genkeypair \
             -v \
-            -keystore release.keystore \
+            -keystore app/release.keystore \
             -alias "$KEY_ALIAS" \
             -keyalg RSA \
             -keysize 2048 \
@@ -39,13 +39,13 @@ jobs:
 
       - name: Validate Generated Keystore
         run: |
-          if [ ! -s release.keystore ]; then
+          if [ ! -s app/release.keystore ]; then
             echo "::error::File keystore failed to generate."
             exit 1
           fi
 
           keytool -list -v \
-            -keystore release.keystore \
+            -keystore app/release.keystore \
             -storepass "$KEYSTORE_PASSWORD" \
             -alias "$KEY_ALIAS" > keystore_check.log 2>&1
 
