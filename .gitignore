@@ -14,7 +14,7 @@ core/p2p/wifi-direct/build/
 core/p2p/hotspot/build/
 core/p2p/transfer/build/
 feature/home/build/
-release.keystore
+app/release.keystore
 *.log
 .gradle/
 core/p2p/session/build/
